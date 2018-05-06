@@ -25,7 +25,7 @@
 ```
 - **StatInfoSavingMap.findMap(timestamp,duration)** is used to calculate how many saves in each levels.
 
-- Similarly, we can reduce 60000 save operations into 90 or less save operations. This is implemented in **createByTimestampAndDurationAndAmount(timestamp, duration, amount)**
+- Similarly, we can reduce 60000 save operations into 90 or less save operations. This is implemented in **StatInfoRepository.createByTimestampAndDurationAndAmount(timestamp, duration, amount)**
 
 #### 2. Load the statistics
 - After we have inserted a certain amount of transactions, if we want to obtain the statistic, we can just combine the statistic along all levels of that time.
@@ -36,6 +36,6 @@
 ```
 - If the window size is about 60000ms, we could just combine first 5 levels of the statInfo. Since this level is limited, the time and space complexity is still O(1).
    
-- This part is implemented in function **StatInfoRepository.loadStatisticByTimestamp(ts, levelLimit=4)**
+- This part is implemented in function **StatInfoRepository.loadStatisticByTimestamp(timestamp, levelLimit=4)**
 
 
