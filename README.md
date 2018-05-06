@@ -6,6 +6,17 @@
         mvn spring-boot:run
 ```
 
+## Implemented API
+| API               | Purpose | Example URL                        |
+|:------------------|:--------|:---------------------------------- |
+| GET /statistics   | Get statistic within last 60 seconds. | http://localhost:8090/statistics |
+| POST /transactions| Create a new transaction and precalculate the statistic in next 60 seconds. | http://localhost:8090/transcactions |
+| GET /ts           | Get current timestamp in system.      | http://localhost:8090/ts |
+| GET /transactions | List out all the saved transactions. | http://localhost:8090/transactions?page=0&size=10 |
+| DELETE /transactions | Delete all the saved transactions and statistic. | http://localhost:8090/transactions |
+
+
+
 ## O(1) Space and Time complexity
 
 #### 1. Pre-calculate Statistic
